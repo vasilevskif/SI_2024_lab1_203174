@@ -1,0 +1,109 @@
+git init
+
+git remote add origin https://github.com/vasilevskif/SI_2024_lab1_203174.git
+
+echo "Filip Vasilevski, 203174" >> README.md
+
+git add .
+
+git commit -m "Initial commit"
+
+git push -u origin master
+
+git add *.java
+
+git commit -m "Add starter code"
+
+git push -u origin master
+
+git checkout -b bug1
+
+git add SILab1_1.java
+
+git commit -m "Fix wrong condition in filterOddLengthStrings"
+
+git checkout -b bug2
+
+git add SILab1_2.java
+
+git commit -m "Fix wrong condition in makeBigStringFrom"
+
+git checkout bug1
+
+git add SILab1Main.java
+
+git commit -m "Call method filterOddLengthStrings in main class"
+
+git checkout bug2
+
+git add SILab1Main.java
+
+git commit -m "Call method makeBigStringFrom in main class"
+
+git push -u origin master
+
+git checkout master
+
+git merge bug1
+
+Kај чекор 20 каде што ја спојуваме гранката bug1 кон master нема конфликт.
+
+git push -u origin master
+
+git checkout bug2
+
+git rebase master
+
+Кај чекор 23 се појавува конфликт кога правиме rebase од bug2 гранката кон master гранката.
+
+$ git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply dc98551... Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply dc98551... Call method makeBigStringFrom in main class
+
+git add 
+
+git rebase --continue
+
+git checkout master
+
+git merge bug2
+
+Кај чекор 25 не се појави конфликт кога ја спојуваме bug2 гранката кон master гранката
+
+git push -u origin master
+
+git add *.txt
+
+git commit -m "Final commit"
+
+git push -u origin master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
